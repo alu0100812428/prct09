@@ -171,9 +171,34 @@ module Bib
           end
      end
      
-     #class Edoc < Biblio           #Documento electronico
+     class Edoc < Biblio           #Documento electronico
+          def initialize()
+          end
+          def set_tipo(tipo)
+               @tipo=tipo
+               if (@tipo == "") 
+                    return RuntimeError
+               end
+          end
+          def get_tipo
+               @tipo
+          end
           
-     #end
+          def set_fuente(url)
+               @url=url
+               if (@url == "") 
+                    return RuntimeError
+               end
+          end
+          def get_tipo
+               @url
+          end
+          def formateo
+               aux=""
+               aux=aux<<"#{get_autor} (#{get_fecha}). #{get_titulo}. [#{get_tipo}], URL: #{get_paginas}."
+               #ejemplo  Apellido, A. A. (Fecha). Título del artículo. Nombre de la revista. Volumen(Número), pp-pp.
+          end
+     end
 end
 
 

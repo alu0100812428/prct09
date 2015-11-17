@@ -11,7 +11,7 @@ describe Bib::Biblio do
         @ref1.edicion_poner(4)
         @ref1.fecha_poner("August 27, 2009")
         @ref1.isbn_poner("ISBN-13: 978-1937785499,ISBN-10: 1937785491")
-        
+        ######################################
         @ref2 = Bib::Libro.new()
         @ref2.set_autor("Scott Chacon")
         @ref2.titulo_poner("Pro Git 2009th Edition")
@@ -20,14 +20,14 @@ describe Bib::Biblio do
         @ref2.edicion_poner(1)
         @ref2.fecha_poner("August 27, 2009")
         @ref2.isbn_poner("ISBN-13: 978-1430218333, ISBN-10: 1430218339")
-        
+        ######################################
         @ref3 = Bib::Art_period.new()
         @ref3.set_autor("Manrique Grisales, J.")
         @ref3.titulo_poner("La bestia que se tragó Armero")
         @ref3.fecha_poner("14 de noviembre de 2010")
         @ref3.set_nombre_periodico("El Espectador")
         @ref3.set_paginas("16-17")
-        #Manrique Grisales, J. (14 de noviembre de 2010). La bestia que se tragó Armero. El Espectador, pp. 16-17.
+        ######################################
         @ref4 = Bib::Art_rev.new()
         @ref4.set_autor("Newman, V.")
         @ref4.titulo_poner("La información: ¿en la urna de cristal?")
@@ -36,8 +36,13 @@ describe Bib::Biblio do
         @ref4.set_numero(15)
         @ref4.set_volumen("Primero")
         @ref4.set_paginas("10")
-        #ejemplo  Apellido, A. A. (Fecha). Título del artículo. Nombre de la revista. Volumen(Número), pp-pp.
-        #Newman, V. (13 de noviembre de 2010). La información: ¿en la urna de cristal?. Semana, Primero (15), pp. 10.
+        ######################################
+        @ref5 = Bib::Edoc.new()
+        @ref5.set_autor("Peter, P.")
+        @ref5.titulo_poner("Documento electrónico")
+        @ref5.fecha_poner("13 de noviembre de 2010")
+        @ref5.set_tipo("e-reader")
+        @ref5.set_fuente("https://es.wikipedia.org/wiki/Documento_electr%C3%B3nico")
     end
     ########################################################################################################################################
     describe "Formeteo de referencia de Libro"do
@@ -65,6 +70,9 @@ describe Bib::Biblio do
         end
         it "Herencia de articulo de periodico"do
             expect(@ref3.is_a?Bib::Art_period).to eq(true)
+        end
+        it "Herencia de Documento electrónico"do
+            expect(@ref5.is_a?Bib::Edoc).to eq(true)
         end
     end
     
