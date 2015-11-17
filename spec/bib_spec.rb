@@ -51,7 +51,7 @@ describe Bib::Biblio do
     end
     
     describe "Comprobacion de herencia" do
-        it "referncias nuevas" do
+        it "referencias nuevas" do
             expect(@ref3.formateo).to eq("Manrique Grisales, J. (14 de noviembre de 2010). La bestia que se tragó Armero. El Espectador, pp. 16-17.")
             expect(@ref4.formateo).to eq("Newman, V. (13 de noviembre de 2010). La información: ¿en la urna de cristal?. Semana, Primero (15), pp. 10.")
         end
@@ -59,6 +59,12 @@ describe Bib::Biblio do
             expect(@ref1.is_a?Object).to eq(true)
             expect(@ref1.is_a?Bib::Biblio).to eq(true)
             expect(@ref1.is_a?Bib::Libro).to eq(true)
+        end
+        it "Herencia de articulo de revista"do
+            expect(@ref4.is_a?Bib::Art_rev).to eq(true)
+        end
+        it "Herencia de articulo de periodico"do
+            expect(@ref3.is_a?Bib::Art_period).to eq(true)
         end
     end
     
