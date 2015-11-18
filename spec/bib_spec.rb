@@ -66,13 +66,13 @@ describe Bib::Biblio do
             expect(@ref1.is_a?Bib::Libro).to eq(true)
         end
         it "Herencia de articulo de revista"do
-            expect(@ref4.is_a?Bib::Art_rev).to eq(true)
+            expect(@ref4.is_a?Bib::Biblio).to eq(true)
         end
         it "Herencia de articulo de periodico"do
-            expect(@ref3.is_a?Bib::Art_period).to eq(true)
+            expect(@ref3.is_a?Bib::Biblio).to eq(true)
         end
         it "Herencia de Documento electrónico"do
-            expect(@ref5.is_a?Bib::Edoc).to eq(true)
+            expect(@ref5.is_a?Bib::Biblio).to eq(true)
         end
     end
     
