@@ -69,11 +69,17 @@ describe Bib::Biblio do
             expect(@ref4.is_a?Bib::Biblio).to eq(true)
         end
         it "Herencia de articulo de periodico"do
-            expect(@ref3.is_a?Bib::Biblio).to eq(true)
+            expect(@ref3.instance_of?Bib::Biblio).to eq(false) ##instancia de X objeto, no comprueba la herencia
         end
         it "Herencia de Documento electrónico"do
             expect(@ref5.is_a?Bib::Biblio).to eq(true)
         end
+    end
+    
+    describe "comparable" do
+       it "Comparar titulo" do
+           expect(@ref1 < @ref3).to eq(false)   #titulo ref1 Programing.. titulo ref3 La bestia
+       end
     end
     
 end

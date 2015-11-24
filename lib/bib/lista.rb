@@ -1,3 +1,4 @@
+include Enumerable
 Node = Struct.new(:value, :next)
 class Lista
   attr_accessor :head,:tail ,:size
@@ -7,7 +8,7 @@ class Lista
     @tail = nil
     @size = 0
   end
-
+  
   def insert_beggining(value)
     node = Node.new(value)
     if @head.nil?

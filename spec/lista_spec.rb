@@ -41,6 +41,7 @@ describe Lista do
             @lista.extract_begginig
             @lista.mostrar.should eq("22")
         end
+        
     end
     
 end

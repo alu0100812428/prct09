@@ -1,3 +1,4 @@
+include Comparable
 module Bib
      class Biblio
      
@@ -6,6 +7,13 @@ module Bib
           def initialize()
                
           end
+          def <=>(anOther)
+               aux1=@titulo
+               aux2=anOther.get_titulo[0]
+               aux1[0] <=> aux2[0]
+          end
+          
+          
           def set_autor(nombre)
                @autor = []
                @autor.push(nombre)
