@@ -9,6 +9,14 @@ class Lista
     @size = 0
   end
   
+  def each
+    node = @head
+    while node != nil
+      yield node.value
+      node=node.next
+    end
+  end
+  
   def insert_beggining(value)
     node = Node.new(value)
     if @head.nil?
