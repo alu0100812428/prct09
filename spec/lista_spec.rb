@@ -84,7 +84,5 @@ describe Lista do
          it "minimo" do
             expect(@list.min).to eq(1)
         end
-        
     end
-    
 end
